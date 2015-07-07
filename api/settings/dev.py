@@ -22,7 +22,7 @@ SOUTH_DATABASE_ADAPTERS = {
 }
 
 STATIC_URL = '/static/'
+MEDIA_ROOT = 'D:\Development\church-media'
+MEDIA_URL = '/media/'
 
 TIME_ZONE = 'Europe/Warsaw'
-
-LANGUAGE_CODE = 'pl'

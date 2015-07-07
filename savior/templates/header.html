@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load staticfiles %}
 
 <!-- Navigation Bar Starts -->
@@ -8,9 +9,7 @@
       <a class="navbar-brand" href="index.html"> <img src="{% static 'images/church-logo.png' %}" alt="church logo" class="img-responsive"></a> </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown active"><a href="#">HOME</span></a>
-        </li>
-        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="about.html">{% trans "ABOUT" %}</a></li>
         <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">MINISTRY <span class="caret"></span></a>
           <ul class="dropdown-menu dropdown-menu-left" role="menu">
             <li><a href="ministry.html">Childrens Ministry</a></li>

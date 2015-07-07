@@ -13,19 +13,17 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     'south',
-    'adminsortable',
+    'adminsortable2',
 
     'savior.apps.savior',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.gzip.GZipMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -67,3 +65,16 @@ USE_I18N = True
 # If you set this to False, Django will not format dates, numbers and
 # calendars according to the current locale.
 USE_L10N = True
+
+DEFAULT_CAROUSEL_LINK_TEXT = 'Learn more'
+
+LANGUAGE_CODE = 'pl'
+
+LANGUAGES = (
+    ('pl', 'Polish'),
+    ('en', 'English'),
+)
+
+LOCALE_PATHS = (
+    os.path.join(PROJECT_PATH, 'locale'),
+)
