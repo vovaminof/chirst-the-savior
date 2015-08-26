@@ -1,0 +1,15 @@
+{% load i18n %}
+
+{% if bulletin %}
+
+<div class="highlight-bg has-margin-bottom">
+    <div class="container event-cta">
+        <div class="ec-txt">
+            <span>{{ bulletin.publish_date }}</span>
+            <p>The latest service bulletin</p>
+        </div>
+        <a class="btn btn-lg btn-primary" href="{{ bulletin.src }}" target="_blank" role="button">{% trans "Download" %}</a>
+    </div>
+</div>
+
+{% endif %}

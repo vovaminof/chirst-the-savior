@@ -1,0 +1,26 @@
+{% load i18n %}
+
+<!-- SUBSCRIBE -->
+<div class="highlight-bg">
+  <div class="container">
+    <div class="row">
+      <form class="form prayer-form" role="form" id="prayerForm">
+        {% csrf_token %}
+        <div class="form-group col-md-4 hidden-sm">
+          <h5 class="susbcribe-head"> {% trans 'PRAYER REQUEST' %}</h5>
+        </div>
+        <div class="form-group col-sm-8 col-md-6">
+          <label class="sr-only">{% trans 'Name' %}</label>
+          <input type="text" class="form-control input-lg" placeholder="{% trans 'Enter your name' %}" name="name" id="pray-name"required maxlength="64">
+          <textarea placeholder="{% trans 'Enter your request' %}" class="form-control input-lg" rows="3" name="text" id="pray-text" required maxlength="500"></textarea>
+          <div style="display: none;" class="alert alert-success prayer-result" id="prayer-success">{% trans 'Your prayer has been saved.' %}</div> 
+          <div style="display: none;" class="alert alert-danger prayer-result" id="prayer-error"></div>
+        </div>
+        <div class="form-group col-sm-2 col-md-2">
+          <button type="submit" class="btn btn-lg btn-primary btn-block">{% trans 'Send' %} →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- END SUBSCRIBE --> 

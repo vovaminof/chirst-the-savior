@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="subpage-head has-margin-bottom">
+  <div class="container">
+    <h3>{{ item.title }}</h3>
+    {% if item.short_text %}
+    	<p class="lead">{{ item.short_text }}</p>
+    {% endif %}
+  </div>
+</div>
+
+<div class="container has-margin-bottom">
+  <div class="row">
+    <div class="col-md-9 has-margin-bottom">
+    {% block additional_content %}{% endblock %}
+ 		{{ item.long_text|safe }}
+    </div>
+    <!--// col md 9--> 
+  </div>
+</div>
+{% endblock %}
