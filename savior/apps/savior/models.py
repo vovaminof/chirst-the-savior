@@ -1,3 +1,5 @@
+from django.utils.timezone import now
+
 from django.conf import settings
 from django.db import models
 
@@ -20,7 +22,7 @@ class Carousel(models.Model):
 
     image = models.FileField(upload_to='carousel')
     title = models.CharField(max_length=128)
-    long_text = models.CharField(max_length=256)
+    long_text = models.CharField(max_length=256, blank=True)
     link = models.CharField(max_length=256, default=None, null=True, blank=True)
     link_text = models.CharField(max_length=256, default=settings.DEFAULT_CAROUSEL_LINK_TEXT, 
                                  null=True, blank=True)
@@ -32,3 +34,12 @@ class Carousel(models.Model):
 
     class Meta(object):
         ordering = ('order',)
+
+
+class PrayerRequest(models.Model):
+    name = models.CharField(max_length=64)
+    text = models.CharField(max_length=500)
+    date_created = models.DateTimeField(default=now)
+
+    def __unicode__(self):
+        return self.text

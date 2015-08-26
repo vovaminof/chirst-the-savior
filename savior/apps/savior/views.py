@@ -1,18 +1,48 @@
-from django.conf import settings
-
+from django.shortcuts import redirect
 from django.forms.models import model_to_dict
-from django.template.response import TemplateResponse
 
-from savior.apps.savior.models import Carousel
+from savior.apps.savior.models import PrayerRequest
+from savior.lib.utils.views import JSONResponse
 
-def index(req):
-    context = {
-        'carousel_images': []
-    }
 
-    for obj in Carousel.objects.get_active():
-        data = model_to_dict(obj)
-        data['image'] = settings.MEDIA_URL + str(data['image'])
-        context['carousel_images'].append(data)
+def send_request(req):
+    if req.method == 'POST':
+        name = req.POST.get('name', '').strip()
+        if not name:
+            return JSONResponse({
+                'error': {
+                    'msg': 'Name filed is required.', 
+                    'field': 'name'
+                }
+            })
 
-    return TemplateResponse(req, 'index.html', context)
+        if len(name) > 64:
+            return JSONResponse({
+                'error': {
+                    'msg': 'Max length of name field is 64 characters.', 
+                    'field': 'name'
+                }
+            })
+
+        text = req.POST.get('text', '').strip()
+        if not text:
+            return JSONResponse({
+                'error': {
+                    'msg': 'Text filed is required.', 
+                    'field': 'text'
+                }
+            })
+
+        if len(text) > 500:
+            return JSONResponse({
+                'error': {
+                    'msg': 'Max length of text field 500 characters.', 
+                    'field': 'text'
+                }
+            })
+
+        PrayerRequest.objects.create(name=name, text=text)
+
+        return JSONResponse({'success': 'ok'})
+
+    return redirect('savior-index')

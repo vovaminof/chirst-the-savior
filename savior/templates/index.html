@@ -1,7 +1,49 @@
 ﻿{% extends 'base.html' %}
+{% load i18n %}
 
 {% block content %}
 
 {% include 'slider.html' %}
+{% include 'bulletin.html' %}
+<div class="container">
+	<div class="container">
+	  <div class="row feature-block">
+	    <div class="col-md-4 col-sm-6 has-margin-bottom index-external-link"> 
+	      <a href="http://www.facebook.com/voxboxkrakow" target="_blank">
+	      	<div class="image-wrapper">
+	      		<img class="img-responsive" src="/static/images/voxbox.png" alt="VoxBox logo" width="160" height="160" />
+	      	</div>
+	      </a>
+	      <h5>{% trans "VoxBox Education Center" %}<br></h5>
+	      <p>{% blocktrans %}The aim of VoxBox Kraków is to provide an English-based
+	        experience to people who want to learn. VoxBox teaches
+	        by themes, with a new theme every week. {% endblocktrans %}</p>
+	    </div>
+	    <div class="col-md-4 col-sm-6 has-margin-bottom index-external-link"> 
+
+	      <a href="#">
+	      	<div class="image-wrapper">
+	    		<img class="img-responsive" src="/static/images/blog.png" alt="blog" width="160" height="160">
+	    	</div>
+	      </a>
+	      <h5>{% trans "Blog" %}</h5>
+	      <p>THIS IS PLACEHOLDER TEXT<br>
+	      </p>
+	    </div>
+	    <div class="col-md-4 col-sm-8 col-sm-offset-2 index-external-link
+	      col-md-offset-0 center-this has-margin-bottom"> 
+	      <a href="#">
+	      	<div class="image-wrapper">
+	    		<img class="img-responsive" src="/static/images/galery.jpg" alt="blog" width="160" height="160">
+	    	</div>
+	      </a>
+	      <h5>{% trans "Galery" %}<br>
+	      </h5>
+	      <p>THIS IS PLACEHOLDER TEXT<br>
+	      </p>
+	    </div>
+	  </div>
+	</div>
+</div>
 
 {% endblock %}

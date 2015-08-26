@@ -21,8 +21,11 @@ SOUTH_DATABASE_ADAPTERS = {
     'default': 'south.db.mysql'
 }
 
+STATIC_ROOT = 'D:\Development\church-static'
 STATIC_URL = '/static/'
 MEDIA_ROOT = 'D:\Development\church-media'
 MEDIA_URL = '/media/'
+
+CKEDITOR_UPLOAD_PATH = 'ckeditor/'
 
 TIME_ZONE = 'Europe/Warsaw'

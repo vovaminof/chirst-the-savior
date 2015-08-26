@@ -6,6 +6,12 @@
   Updated	: 26 May 2015
 ---------------------------------------------------------------
 */
+
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+
 $(document).ready(function() {
 
  
@@ -83,24 +89,39 @@ function getCurrentScroll() {
 
  
 /* --------------------
-   SUBSCRIBE FORM 
+   PRAYER FORM 
 ----------------------- */
    
  
-$('#subscribeForm').ketchup().submit(function() {
+$('#prayerForm').ketchup().submit(function() {
 	if ($(this).ketchup('isValid')) {
-		var action = $(this).attr('action');
+    $('.prayer-result').hide();
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", $('#prayerForm input[name=csrfmiddlewaretoken]').val());
+            }
+        }
+    });
 		$.ajax({
-			url: action,
+			url: 'savior/send-request/',
 			type: 'POST',
 			data: {
-				email: $('#address').val()
+        name: $('#pray-name').val(),
+        text: $('#pray-text').val()
 			},
 			success: function(data){
-				$('#result').html(data);
+        if (data.error) {
+          $('#prayer-error').text(data.error.msg);
+          $('#prayer-error').show();
+        } else {
+          $('#prayer-success').show().delay(3000).fadeOut();
+          $('#pray-name').val('');
+          $('#pray-text').val('');
+        }
 			},
 			error: function() {
-				$('#result').html('Sorry, an error occurred.');
+				$('#prayer-error').html('Sorry, an error occurred.');
 			}
 		});
 	}

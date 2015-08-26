@@ -12,10 +12,22 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
 
-    'south',
     'adminsortable2',
+    'ckeditor',
+    'geoposition',
+    'recurrence',
+    'south',
+    'taggit',
 
     'savior.apps.savior',
+    'savior.apps.service',
+    'savior.apps.menu',
+    'savior.apps.event',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'savior.lib.context_processor.menu_processor.menu_processor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -24,6 +36,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -39,8 +52,12 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, "savior", "templates"),
 )
 
-SECRET_KEY = 'z@_%ro12sga#f2px#3^v#x$haez7&ei%q1f@r*=*w7p))-r!=6'
+SOUTH_MIGRATION_MODULES = {
+    'taggit': 'taggit.south_migrations',
+}
 
+SECRET_KEY = 'z@_%ro12sga#f2px#3^v#x$haez7&ei%q1f@r*=*w7p))-r!=6'
+TAGGIT_CASE_INSENSITIVE = True
 USE_TZ = True
 
 ROOT_URLCONF = 'api.urls'
@@ -78,3 +95,5 @@ LANGUAGES = (
 LOCALE_PATHS = (
     os.path.join(PROJECT_PATH, 'locale'),
 )
+
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'

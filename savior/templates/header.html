@@ -1,30 +1,79 @@
 {% load i18n %}
 {% load staticfiles %}
+{% get_current_language as LC %}
 
 <!-- Navigation Bar Starts -->
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand" href="index.html"> <img src="{% static 'images/church-logo.png' %}" alt="church logo" class="img-responsive"></a> </div>
+      <a class="navbar-brand" href="/"> <img src="{% static 'images/church-logo.png' %}" alt="church logo" class="img-responsive"></a> </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="about.html">{% trans "ABOUT" %}</a></li>
-        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">MINISTRY <span class="caret"></span></a>
-          <ul class="dropdown-menu dropdown-menu-left" role="menu">
-            <li><a href="ministry.html">Childrens Ministry</a></li>
-            <li><a href="ministry.html">Students Ministry</a></li>
-            <li><a href="ministry.html">Groups</a></li>
-          </ul>
+        <li>
+          {% if menu.about %}
+            {% if menu.about|length > 1 %}
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                {% trans "ABOUT" %}<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-left" role="menu">
+                {% for item in menu.about %}
+                  <li><a href="/{{ LC }}{% trans '/about/' %}{{ item.slug }}">{{ item.title }}</a></li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <a href="/{{ LC }}{% trans '/about/' %}{{ menu.about.0.slug }}">{% trans "ABOUT" %}</a>
+            {% endif %}           
+          {% endif %}
         </li>
-        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">SERMONS <span class="caret"></span></a>
-          <ul class="dropdown-menu dropdown-menu-left" role="menu">
-            <li><a href="sermons.html">Christ-Occupied</a></li>
-            <li><a href="sermons.html">God's Love</a></li>
-            <li><a href="sermons.html">Faithfulness</a></li>
-            <li><a href="sermons.html">Praise Him</a></li>
-          </ul>
-        </li>
+        {% if menu.ministries %}
+          <li>
+            {% if menu.ministries|length > 1 %}
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                {% trans "MINISTRIES" %}<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-left" role="menu">
+                {% for item in menu.ministries %}
+                  <li><a href="/{{ LC }}{% trans '/ministry/' %}{{ item.slug }}">{{ item.title }}</a></li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <a href="/{{ LC }}{% trans '/ministry/' %}{{ menu.ministries.0.slug }}">{{ menu.ministries.0.title }}</a>
+            {% endif %}
+          </li>
+        {% endif %}
+        {% if menu.projects %}
+          <li>
+            {% if menu.projects|length > 1 %}
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                {% trans "PROJECTS" %}<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-left" role="menu">
+                {% for item in menu.projects %}
+                  <li><a href="/{{ LC }}{% trans '/project/' %}{{ item.slug }}">{{ item.title }}</a></li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <a href="/{{ LC }}{% trans '/project/' %}{{ menu.projects.0.slug }}">{{ menu.projects.0.title }}</a>
+            {% endif %}
+          </li>
+        {% endif %}
+          {% if menu.courses %}
+          <li>
+            {% if menu.courses|length > 1 %}
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                {% trans "COURSES" %}<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-left" role="menu">
+                {% for item in menu.courses %}
+                  <li><a href="/{{ LC }}{% trans '/course/' %}{{ item.slug }}">{{ item.title }}</a></li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <a href="/{{ LC }}{% trans '/course/' %}{{ menu.courses.0.slug }}">{{ menu.courses.0.title }}</a>
+            {% endif %}
+          </li>
+        {% endif %}
         <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">PAGES <span class="caret"></span></a>
           <ul class="dropdown-menu dropdown-menu-left" role="menu">
             <li><a href="image-gallery.html">Image Gallery</a></li>
