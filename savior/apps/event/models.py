@@ -1,7 +1,10 @@
-from django.db import models
+from events.models import Event as SimpleEvent
 from geoposition.fields import GeopositionField
-from recurrence.fields import RecurrenceField
 from taggit.managers import TaggableManager
+
+from django.db import models
+from django.contrib.contenttypes import generic
+
 
 
 class Event(models.Model):
@@ -10,9 +13,10 @@ class Event(models.Model):
     title = models.CharField(max_length=64)
     description = models.TextField()
     image = models.FileField(upload_to='events')
-    start = models.TimeField()
-    end = models.TimeField()
-    recurrences = RecurrenceField()
+    recurrences = generic.GenericRelation(SimpleEvent)
     place = GeopositionField()
-    join_link = models.CharField(max_length=128)
-    join_text = models.CharField(max_length=32)
+    join_link = models.CharField(max_length=128, blank=True)
+    join_text = models.CharField(max_length=32, blank=True)
+
+    def __unicode__(self):
+        return self.title 

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="subpage-head has-margin-bottom">
+  <div class="container">
+    <h3>{% trans "Programs &amp; Events" %}</h3>
+    <p class="lead">{% trans "List of Upcoming Events and Programs" %}</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 has-margin-bottom"> 
+      {% if current_tag %}
+        <div class="has-margin-bottom">
+          <h5>{% trans "Results for: " %}{{ current_tag }}</h5>
+          <a href="/events/">{% trans "Show all events" %}</a>
+        </div>
+      {% endif %}
+      {% for event in events %}
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+            <div class="highlight-bg has-padding-xs event-details">
+              <div class="ed-title">{% trans "EVENT DETAILS" %}</div>
+              <div class="ed-content"> <span class="glyphicon glyphicon-calendar"></span> {{ event.date_start | date:"d F Y"}} <br>
+                <span class="glyphicon glyphicon-time"></span> {{ event.date_start | date:"G:i"}} - {{ event.date_end | date:"G:i"}} <br>
+                <span class="glyphicon glyphicon-map-marker"></span> {{ event.place }}</div>
+            </div>
+          </div>
+          <div class="col-md-8 col-sm-8 bulletin">
+            <h4 class="media-heading">{{ event.title }} </h4>
+            <p class="media-content">{{ event.description | truncatechars:140}}</p>
+            <a class="btn btn-primary" href="/events/{{ event.id }}/{{ event.occurrence_id }}/" role="button">{% trans "Event Details" %} →</a> </div>
+        </div>
+        {% if not forloop.last %}
+          <hr>
+        {% endif %}
+      {% endfor %}
+      
+      <!-- PAGINATION -->
+      
+      <div class="text-center center-block">
+        <ul class="pagination">
+          {% if handler.has_previous %}
+            <li><a href="/events/?page={{ handler.previous_page_number }}&tag={{ current_tag }}">«</a></li>
+          {% else %}
+            <li class="disabled"><a href="#">«</a></li>
+          {% endif %}
+
+          {% for page in pages %}
+            {% if page == handler.number %}
+              <li class="active"><a href="/events/?page={{ page }}&tag={{ current_tag }}">{{ page }}</a></li>
+            {% else %}
+             <li><a href="/events/?page={{ page }}&tag={{ current_tag }}">{{ page }}</a></li>
+            {% endif %}
+          {% endfor %}
+
+          {% if handler.has_next %}
+            <li><a href="/events/?page={{ handler.next_page_number }}&tag={{ current_tag }}">»</a></li>
+          {% else %}
+            <li class="disabled"><a href="#">»</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+    <!--// col md 9--> 
+    
+    <!--Sidebar-->
+    <div class="col-md-3">
+      <div class="tag-cloud has-margin-bottom">
+        {% for tag in tags%}
+          <a href="/events/?tag={{ tag }}">{{ tag }}</a>
+        {% endfor %} </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

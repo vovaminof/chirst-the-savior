@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+
+<div class="subpage-head has-margin-bottom">
+  <div class="container">
+    <h3>{{ event.title }}</h3>
+    <p class="lead">{% trans 'on ' %}{{ event.date_start | date:"d F Y"}} {% trans 'at ' %}{{ event.place }}</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 has-margin-bottom">
+      <article class="blog-content"> <img src="{{ event.image }}" alt="church event" class="img-responsive has-margin-xs-bottom">
+        <p class="lead">{{ event.description }}</p>
+      </article>
+    </div>
+
+    <div class="col-md-3">
+      <div class="highlight-bg has-padding event-details has-margin-xs-bottom">
+        <div class="ed-title">{% trans 'EVENT DETAILS' %}</div>
+        <div class="ed-content"> <span class="glyphicon glyphicon-calendar"></span> {{ event.date_start | date:"d F Y"}} <br>
+          <span class="glyphicon glyphicon-time"></span> {{ event.date_start | date:"G:i"}} - {{ event.date_end | date:"G:i"}} <br>
+          <span class="glyphicon glyphicon-map-marker"></span> {{ event.place }}
+        </div>
+        {% if event.join_link and event.join_text %}
+          <div class="text-center has-margin-xs-top"> 
+            <a class="btn btn-primary btn-lg" href="{{ event.join_link }}" target="_blank" role="button">{{ event.join_text }}</a>
+          </div> 
+        {% endif %}
+      </div>
+      <div class="tag-cloud has-margin-bottom">
+        {% for tag in tags %}
+          <a href="/events/?tag={{ tag }}">{{ tag }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

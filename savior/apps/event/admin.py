@@ -1,12 +1,14 @@
-from django.contrib import admin
-
+from events.admin import EventInline
 from modeltranslation.admin import TranslationAdmin
+
+from django.contrib import admin
 
 from savior.apps.event.models import Event
 
 
 class EventAdmin(TranslationAdmin):
-    pass
+    
+    inlines = (EventInline,)
 
 
 admin.site.register(Event, EventAdmin)

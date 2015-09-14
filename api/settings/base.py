@@ -15,7 +15,7 @@ INSTALLED_APPS = (
     'adminsortable2',
     'ckeditor',
     'geoposition',
-    'recurrence',
+    'events',
     'south',
     'taggit',
 
@@ -55,6 +55,8 @@ TEMPLATE_DIRS = (
 SOUTH_MIGRATION_MODULES = {
     'taggit': 'taggit.south_migrations',
 }
+
+EVENTS_MAX_FUTURE_OCCURRENCES = 5
 
 SECRET_KEY = 'z@_%ro12sga#f2px#3^v#x$haez7&ei%q1f@r*=*w7p))-r!=6'
 TAGGIT_CASE_INSENSITIVE = True
