@@ -3,7 +3,7 @@ django-admin-sortable==1.8.4
 django-ckeditor==4.5.1
 django-geoposition==0.2.2
 django-modeltranslation==0.10
-django-simple-event==1.2
+django-simple-events==1.2
 django-taggit==0.17.0
 geopy==1.11.0
 ipython==1.1.0
