@@ -35,7 +35,8 @@ def get_index(req):
 def get_about(req, slug):
     obj = get_object_or_404(About, slug=slug + '/')
     context = {
-        'item': model_to_dict(obj)
+        'item': model_to_dict(obj),
+        'current': 'about'
     }
 
     return TemplateResponse(req, 'about.html', context)
@@ -45,7 +46,8 @@ def get_ministry(req, slug):
     data =  model_to_dict(obj)
     data['image'] = settings.MEDIA_URL + str(data['image'])
     context = {
-        'item': data
+        'item': data,
+        'current': 'ministries'
     }
 
     return TemplateResponse(req, 'ministry.html', context)
@@ -55,7 +57,8 @@ def get_project(req, slug):
     data =  model_to_dict(obj)
     data['image'] = settings.MEDIA_URL + str(data['image'])
     context = {
-        'item': data
+        'item': data,
+        'current': 'projects'
     }
 
     return TemplateResponse(req, 'project.html', context)
@@ -65,7 +68,8 @@ def get_course(req, slug):
     data =  model_to_dict(obj)
     data['image'] = settings.MEDIA_URL + str(data['image'])
     context = {
-        'item': data
+        'item': data,
+        'current': 'courses'
     }
 
     return TemplateResponse(req, 'course.html', context)

@@ -12,6 +12,7 @@ base_urls = patterns('',
 	url(r'^ckeditor/', include('ckeditor.urls')),
     url(r'^service/', include('savior.apps.service.urls')),
     url(r'^savior/', include('savior.apps.savior.urls')),
+    url(r'^events/', include('savior.apps.event.urls')),
     url(r'^', include('savior.apps.menu.urls')),
 )
 
