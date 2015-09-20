@@ -1,4 +1,5 @@
 from ckeditor.fields import RichTextField
+from geoposition.fields import GeopositionField
 
 from django.conf import settings
 from django.db import models
@@ -49,4 +50,9 @@ class Project(AbstractMenu):
 class Course(AbstractMenu):
     image = models.FileField(upload_to='courses')
 
-     
+
+class Contact(models.Model):
+    address_prefix = models.TextField()
+    address = GeopositionField()
+    phone = models.CharField(max_length=32)
+    email = models.CharField(max_length=32) 

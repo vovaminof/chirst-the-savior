@@ -30,7 +30,7 @@
           <li class="{% if current == 'ministries' %}active{% endif %}"> 
             {% if menu.ministries|length > 1 %}
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                {% trans "MINISTRIES" %}<span class="caret"></span>
+                {% trans "MINISTRY" %}<span class="caret"></span>
               </a>
               <ul class="dropdown-menu dropdown-menu-left" role="menu">
                 {% for item in menu.ministries %}
@@ -38,31 +38,27 @@
                 {% endfor %}
               </ul>
             {% else %}
-              <a href="/{{ LC }}{% trans '/ministry/' %}{{ menu.ministries.0.slug }}">{% trans "MINISTRIES" %}</a>
+              <a href="/{{ LC }}{% trans '/ministry/' %}{{ menu.ministries.0.slug }}">{% trans "MINISTRY" %}</a>
             {% endif %}
           </li>
         {% endif %}
         {% if menu.projects %}
           <li class="{% if current == 'projects' %}active{% endif %}">
-            {% if menu.projects|length > 1 %}
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                {% trans "PROJECTS" %}<span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-left" role="menu">
-                {% for item in menu.projects %}
-                  <li><a href="/{{ LC }}{% trans '/project/' %}{{ item.slug }}">{{ item.title }}</a></li>
-                {% endfor %}
-              </ul>
-            {% else %}
-              <a href="/{{ LC }}{% trans '/project/' %}{{ menu.projects.0.slug }}">{% trans "PROJECTS" %}</a>
-            {% endif %}
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              {% trans "PROJECT" %}<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-left" role="menu">
+              {% for item in menu.projects %}
+                <li><a href="/{{ LC }}{% trans '/project/' %}{{ item.slug }}">{{ item.title }}</a></li>
+              {% endfor %}
+            </ul>
           </li>
         {% endif %}
           {% if menu.courses %}
           <li class="{% if current == 'courses' %}active{% endif %}">
             {% if menu.courses|length > 1 %}
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                {% trans "COURSES" %}<span class="caret"></span>
+                {% trans "COURSE" %}<span class="caret"></span>
               </a>
               <ul class="dropdown-menu dropdown-menu-left" role="menu">
                 {% for item in menu.courses %}
@@ -70,12 +66,13 @@
                 {% endfor %}
               </ul>
             {% else %}
-              <a href="/{{ LC }}{% trans '/course/' %}{{ menu.courses.0.slug }}">{% trans "COURSES" %}</a>
+              <a href="/{{ LC }}{% trans '/course/' %}{{ menu.courses.0.slug }}">{% trans "COURSE" %}</a>
             {% endif %}
           </li>
         {% endif %}
      
         <li class="{% if current == 'events' %}active{% endif %}"><a href="/{{ LC }}/events/">{% trans "EVENTS" %}</a></li>
+        <li class="{% if current == 'contact' %}active{% endif %}"><a href="/{{ LC }}/contact/">{% trans "CONTACT" %}</a></li>
       </ul>
     </div>
     <!--/.nav-collapse --> 

@@ -91,7 +91,7 @@ LANGUAGE_CODE = 'pl'
 
 LANGUAGES = (
     ('pl', 'Polish'),
-    ('en', 'English'),
+    # ('en', 'English'),
 )
 
 LOCALE_PATHS = (
@@ -99,3 +99,5 @@ LOCALE_PATHS = (
 )
 
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+
+MAPS_API = 'AIzaSyC16yYOBShhwmlvzMXTo4Ps-29WCkq8EUE'
