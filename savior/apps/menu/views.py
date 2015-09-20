@@ -1,11 +1,15 @@
+from geopy.geocoders import GoogleV3
+
 from django.conf import settings
 from django.template.response import TemplateResponse
 from django.forms.models import model_to_dict
 from django.shortcuts import get_object_or_404
 
-from savior.apps.menu.models import About, Ministry, Project, Course
+from savior.apps.menu.models import About, Ministry, Project, Course, Contact
 from savior.apps.savior.models import Carousel
 from savior.apps.service.models import Bulletin
+
+geolocator = GoogleV3()
 
 
 def get_index(req):
@@ -30,6 +34,20 @@ def get_index(req):
         pass
 
     return TemplateResponse(req, 'index.html', context)
+
+
+def get_contact(req):
+    obj = get_object_or_404(Contact)
+    data = model_to_dict(obj)
+    location = geolocator.reverse('{0},{1}'.format(data['address'].latitude, data['address'].longitude), timeout=5)
+    data['readable_address'] = location[0].address.replace('Poland', 'Polska')
+
+    context = {
+        'item': data,
+        'current': 'contact',
+        'maps_api': settings.MAPS_API
+    }
+    return TemplateResponse(req, 'contact.html', context)
 
 
 def get_about(req, slug):

@@ -3,7 +3,7 @@ from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 from adminsortable2.admin import SortableAdminMixin
 
-from savior.apps.menu.models import About, Ministry, Project, Course
+from savior.apps.menu.models import About, Ministry, Project, Course, Contact
 
 
 class AboutAdmin(SortableAdminMixin, TranslationAdmin):
@@ -22,6 +22,11 @@ class CourseAdmin(SortableAdminMixin, TranslationAdmin):
 	pass
 
 
+class ContactAdmin(TranslationAdmin):
+	pass
+
+
+admin.site.register(Contact, ContactAdmin)
 admin.site.register(About, AboutAdmin)
 admin.site.register(Ministry, MinistryAdmin)
 admin.site.register(Project, ProjectAdmin)

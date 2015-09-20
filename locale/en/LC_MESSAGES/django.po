@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-07 22:17+0200\n"
+"POT-Creation-Date: 2015-09-20 22:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,133 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\savior\templates\header.html:12
+#: .\savior\templates\bulletin.html:11
+msgid "Download"
+msgstr ""
+
+#: .\savior\templates\contact.html:7
+msgid "Contact us"
+msgstr ""
+
+#: .\savior\templates\contact.html:8
+msgid "Our Church address and contact details"
+msgstr ""
+
+#: .\savior\templates\contact.html:15
+msgid "OUR ADDRESS"
+msgstr ""
+
+#: .\savior\templates\contact.html:18
+msgid "Phone"
+msgstr ""
+
+#: .\savior\templates\contact.html:19
+msgid "Email"
+msgstr ""
+
+#: .\savior\templates\event-single.html:9
+msgid "on "
+msgstr ""
+
+#: .\savior\templates\event-single.html:9
+msgid "at "
+msgstr ""
+
+#: .\savior\templates\event-single.html:23 .\savior\templates\events.html:24
+msgid "EVENT DETAILS"
+msgstr ""
+
+#: .\savior\templates\events.html:7
+msgid "Programs &amp; Events"
+msgstr ""
+
+#: .\savior\templates\events.html:8
+msgid "List of Upcoming Events and Programs"
+msgstr ""
+
+#: .\savior\templates\events.html:16
+msgid "Results for: "
+msgstr ""
+
+#: .\savior\templates\events.html:17
+msgid "Show all events"
+msgstr ""
+
+#: .\savior\templates\events.html:33
+msgid "Event Details"
+msgstr ""
+
+#: .\savior\templates\header.html:17 .\savior\templates\header.html.py:25
 msgid "ABOUT"
+msgstr ""
+
+#: .\savior\templates\header.html:21 .\savior\templates\header.html.py:25
+msgid "/about/"
+msgstr ""
+
+#: .\savior\templates\header.html:33 .\savior\templates\header.html.py:41
+msgid "MINISTRY"
+msgstr ""
+
+#: .\savior\templates\header.html:37 .\savior\templates\header.html.py:41
+msgid "/ministry/"
+msgstr ""
+
+#: .\savior\templates\header.html:48
+msgid "PROJECT"
+msgstr ""
+
+#: .\savior\templates\header.html:52
+msgid "/project/"
+msgstr ""
+
+#: .\savior\templates\header.html:61 .\savior\templates\header.html.py:69
+msgid "COURSE"
+msgstr ""
+
+#: .\savior\templates\header.html:65 .\savior\templates\header.html.py:69
+msgid "/course/"
+msgstr ""
+
+#: .\savior\templates\header.html:74
+msgid "EVENTS"
+msgstr ""
+
+#: .\savior\templates\header.html:75
+msgid "CONTACT"
+msgstr ""
+
+#: .\savior\templates\index.html:17
+msgid "VoxBox Education Center"
+msgstr ""
+
+#: .\savior\templates\index.html:18
+msgid ""
+"The aim of VoxBox Kraków is to provide an English-based\n"
+"\t        experience to people who want to learn. VoxBox teaches\n"
+"\t        by themes, with a new theme every week. "
+msgstr ""
+
+#: .\savior\templates\pray.html:10
+msgid "PRAYER REQUEST"
+msgstr ""
+
+#: .\savior\templates\pray.html:13
+msgid "Name"
+msgstr ""
+
+#: .\savior\templates\pray.html:14
+msgid "Enter your name"
+msgstr ""
+
+#: .\savior\templates\pray.html:15
+msgid "Enter your request"
+msgstr ""
+
+#: .\savior\templates\pray.html:16
+msgid "Your prayer has been saved."
+msgstr ""
+
+#: .\savior\templates\pray.html:20
+msgid "Send"
 msgstr ""
