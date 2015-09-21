@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-20 22:30+0200\n"
+"POT-Creation-Date: 2015-09-21 23:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,15 +22,15 @@ msgstr ""
 msgid "Download"
 msgstr "Pobierz"
 
-#: .\savior\templates\contact.html:7
+#: .\savior\templates\contact.html:7 .\savior\templates\footer.html:17
 msgid "Contact us"
-msgstr ""
+msgstr "Kontakt"
 
 #: .\savior\templates\contact.html:8
 msgid "Our Church address and contact details"
 msgstr ""
 
-#: .\savior\templates\contact.html:15
+#: .\savior\templates\contact.html:15 .\savior\templates\footer.html:21
 msgid "OUR ADDRESS"
 msgstr ""
 
@@ -73,6 +73,27 @@ msgstr ""
 #: .\savior\templates\events.html:33
 msgid "Event Details"
 msgstr ""
+
+#: .\savior\templates\footer.html:9
+msgid "ABOUT THE CHURCH"
+msgstr ""
+
+#: .\savior\templates\footer.html:13
+msgid "QUICK LINKS"
+msgstr ""
+
+#: .\savior\templates\footer.html:15
+msgid "Events"
+msgstr "Wydarzenia"
+
+#: .\savior\templates\footer.html:16
+msgid "Latest bulletin"
+msgstr ""
+
+#: .\savior\templates\footer.html:28
+#, fuzzy
+msgid "CONNECT"
+msgstr "KONTAKT"
 
 #: .\savior\templates\header.html:17 .\savior\templates\header.html.py:25
 msgid "ABOUT"

@@ -3,7 +3,7 @@ from django.contrib import admin
 from adminsortable2.admin import SortableAdminMixin
 from modeltranslation.admin import TranslationAdmin
 
-from savior.apps.savior.models import Carousel, PrayerRequest
+from savior.apps.savior.models import Carousel, PrayerRequest, Footer
 
 
 class PrayerRequestAdmin(admin.ModelAdmin):
@@ -18,5 +18,6 @@ class CarouselAdmin(SortableAdminMixin, TranslationAdmin):
     list_display = ('title', 'active')
 
 
+admin.site.register(Footer, TranslationAdmin)
 admin.site.register(PrayerRequest, PrayerRequestAdmin)
 admin.site.register(Carousel, CarouselAdmin)
