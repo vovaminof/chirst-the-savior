@@ -28,6 +28,7 @@ INSTALLED_APPS = (
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'savior.lib.context_processor.menu_processor.menu_processor',
+    'savior.lib.context_processor.footer_processor.footer_processor',
 )
 
 MIDDLEWARE_CLASSES = (
