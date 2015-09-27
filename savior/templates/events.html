@@ -23,13 +23,14 @@
             <div class="highlight-bg has-padding-xs event-details">
               <div class="ed-title">{% trans "EVENT DETAILS" %}</div>
               <div class="ed-content"> <span class="glyphicon glyphicon-calendar"></span> {{ event.date_start | date:"d F Y"}} <br>
-                <span class="glyphicon glyphicon-time"></span> {{ event.date_start | date:"G:i"}} - {{ event.date_end | date:"G:i"}} <br>
+                <span class="glyphicon glyphicon-time"></span>
+                {{ event.date_start | date:"G:i"}}{% if event.date_end %} - {{ event.date_end | date:"G:i"}}{% endif %} <br>
                 <span class="glyphicon glyphicon-map-marker"></span> {{ event.place }}</div>
             </div>
           </div>
           <div class="col-md-8 col-sm-8 bulletin">
             <h4 class="media-heading">{{ event.title }} </h4>
-            <p class="media-content">{{ event.description | truncatechars:140}}</p>
+            <p class="media-content">{% autoescape off %}{{ event.description | truncatechars:140}}{% endautoescape %}</p>
             <a class="btn btn-primary" href="/events/{{ event.id }}/{{ event.occurrence_id }}/" role="button">{% trans "Event Details" %} →</a> </div>
         </div>
         {% if not forloop.last %}

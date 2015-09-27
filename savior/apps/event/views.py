@@ -2,8 +2,6 @@ import re
 import time
 from datetime import datetime, timedelta
 
-from geopy.geocoders import GoogleV3
-
 from taggit.models import Tag
 
 from django.conf import settings
@@ -12,8 +10,6 @@ from django.template.response import TemplateResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from savior.apps.event.models import Event
-
-geolocator = GoogleV3()
 
 default_fields = ['id', 'title', 'description', 'recurrences', 'place',
                   'recurrences__occurrence__datetime', 'recurrences__duration', 
@@ -27,15 +23,11 @@ def format_event(data):
     
     data['date_start'] = data.pop('recurrences__occurrence__datetime')
     duration = data.pop('recurrences__duration')
-    data['date_end'] = data['date_start'] + timedelta(hours=duration.hour, minutes=duration.minute, seconds=duration.second)
+    duration = timedelta(hours=duration.hour, minutes=duration.minute, seconds=duration.second)
+    if duration != timedelta(0):
+        data['date_end'] = data['date_start'] + duration
+
     data['occurrence_id'] = data.pop('recurrences__occurrence__id')
-
-    location = geolocator.reverse(data.pop('place').replace(',', ' '), timeout=5)
-    data['place'] = location[0].address
-    
-    data['place'] = re.sub(', Poland', '', data['place'])
-    data['place'] = re.sub(r'\s[0-9]{2}\-[0-9]{3}', '', data['place'])
-
 
     return data
 
