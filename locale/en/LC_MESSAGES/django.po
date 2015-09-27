@@ -8,13 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-21 23:01+0200\n"
+"POT-Creation-Date: 2015-09-27 23:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: .\savior\templates\bulletin.html:9
+msgid "The latest service bulletin"
+msgstr ""
 
 #: .\savior\templates\bulletin.html:11
 msgid "Download"
@@ -32,7 +36,7 @@ msgstr ""
 msgid "OUR ADDRESS"
 msgstr ""
 
-#: .\savior\templates\contact.html:18
+#: .\savior\templates\contact.html:18 .\savior\templates\footer.html:24
 msgid "Phone"
 msgstr ""
 
@@ -68,7 +72,7 @@ msgstr ""
 msgid "Show all events"
 msgstr ""
 
-#: .\savior\templates\events.html:33
+#: .\savior\templates\events.html:34
 msgid "Event Details"
 msgstr ""
 
@@ -138,9 +142,8 @@ msgstr ""
 
 #: .\savior\templates\index.html:18
 msgid ""
-"The aim of VoxBox Kraków is to provide an English-based\n"
-"\t        experience to people who want to learn. VoxBox teaches\n"
-"\t        by themes, with a new theme every week. "
+"The aim of VoxBox Kraków is to provide an English-based experience to people "
+"who want to learn. VoxBox teaches by themes, with a new theme every week."
 msgstr ""
 
 #: .\savior\templates\pray.html:10
