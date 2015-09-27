@@ -25,7 +25,10 @@
               <div class="ed-content"> <span class="glyphicon glyphicon-calendar"></span> {{ event.date_start | date:"d F Y"}} <br>
                 <span class="glyphicon glyphicon-time"></span>
                 {{ event.date_start | date:"G:i"}}{% if event.date_end %} - {{ event.date_end | date:"G:i"}}{% endif %} <br>
-                <span class="glyphicon glyphicon-map-marker"></span> {{ event.place }}</div>
+                {% if event.place %}
+                  <span class="glyphicon glyphicon-map-marker"></span> {{ event.place }}
+                {% endif %}
+              </div>
             </div>
           </div>
           <div class="col-md-8 col-sm-8 bulletin">

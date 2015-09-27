@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-27 23:09+0200\n"
+"POT-Creation-Date: 2015-09-27 23:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,15 +48,15 @@ msgstr "Email"
 
 #: .\savior\templates\event-single.html:9
 msgid "on "
-msgstr ""
+msgstr " "
 
 #: .\savior\templates\event-single.html:9
 msgid "at "
-msgstr "-"
+msgstr "- "
 
 #: .\savior\templates\event-single.html:23 .\savior\templates\events.html:24
 msgid "EVENT DETAILS"
-msgstr "SZCZEGÓŁY"
+msgstr "Szczegóły wydarzenia"
 
 #: .\savior\templates\events.html:7
 msgid "Programs &amp; Events"
@@ -74,7 +74,7 @@ msgstr "Wyniki dla: "
 msgid "Show all events"
 msgstr "Pokaż wszystkie wydarzenia"
 
-#: .\savior\templates\events.html:34
+#: .\savior\templates\events.html:36
 msgid "Event Details"
 msgstr "Szczegóły"
 
@@ -108,7 +108,6 @@ msgid "/about/"
 msgstr "/o-nas/"
 
 #: .\savior\templates\header.html:33 .\savior\templates\header.html.py:41
-#, fuzzy
 msgid "MINISTRY"
 msgstr "DUSZPASTERSTWA"
 
@@ -118,7 +117,7 @@ msgstr "/duszpasterstwo/"
 
 #: .\savior\templates\header.html:48
 msgid "PROJECT"
-msgstr "PROJEKT"
+msgstr "PROJEKTY"
 
 #: .\savior\templates\header.html:52
 msgid "/project/"
@@ -126,7 +125,7 @@ msgstr "/projekt/"
 
 #: .\savior\templates\header.html:61 .\savior\templates\header.html.py:69
 msgid "COURSE"
-msgstr "KURS"
+msgstr "KURSY"
 
 #: .\savior\templates\header.html:65 .\savior\templates\header.html.py:69
 msgid "/course/"
