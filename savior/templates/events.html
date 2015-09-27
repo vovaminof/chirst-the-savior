@@ -32,7 +32,7 @@
             </div>
           </div>
           <div class="col-md-8 col-sm-8 bulletin">
-            <h4 class="media-heading">{{ event.title }} </h4>
+            <h4 class="media-heading" style="color:#{{ event.title_color }}">{{ event.title }} </h4>
             <p class="media-content">{% autoescape off %}{{ event.description | truncatechars:140}}{% endautoescape %}</p>
             <a class="btn btn-primary" href="/events/{{ event.id }}/{{ event.occurrence_id }}/" role="button">{% trans "Event Details" %} →</a> </div>
         </div>

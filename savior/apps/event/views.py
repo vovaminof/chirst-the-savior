@@ -11,7 +11,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from savior.apps.event.models import Event
 
-default_fields = ['id', 'title', 'description', 'recurrences', 'place',
+default_fields = ['id', 'title', 'title_color', 'description', 'recurrences', 'place',
                   'recurrences__occurrence__datetime', 'recurrences__duration', 
                   'recurrences__occurrence__id']
 

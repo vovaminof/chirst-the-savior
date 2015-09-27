@@ -6,7 +6,7 @@
 <div class="subpage-head has-margin-bottom">
   <div class="container">
     <h3>{{ event.title }}</h3>
-    <p class="lead">{% trans 'on ' %}{{ event.date_start | date:"d F Y"}} {% trans 'at ' %}{{ event.place }}</p>
+    <p class="lead">{% trans 'on ' %}{{ event.date_start | date:"d F Y"}} {% if event.place %}{% trans 'at ' %}{{ event.place }}{% endif %}</p>
   </div>
 </div>
 
