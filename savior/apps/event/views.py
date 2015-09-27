@@ -48,7 +48,7 @@ def get_event(req, event_id, occurrence_id):
     return TemplateResponse(req, 'event-single.html', context)
 
 def get_all_events(req):
-    tag = req.GET.get('tag')
+    tag = req.GET.get('tag', '')
     events_list = Event.objects.filter(recurrences__occurrence__datetime__gt=datetime.now())
 
     if tag:
