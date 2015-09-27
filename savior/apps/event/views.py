@@ -36,12 +36,13 @@ def get_event(req, event_id, occurrence_id):
     try:
         obj = Event.objects.filter(pk=event_id, recurrences__occurrence__id=occurrence_id) \
                            .values(*(default_fields + ['image']))[0]
+        tags = Event.objects.get(id=obj['id']).tags.all()
     except IndexError:
         raise Http404
 
     context = {
         'event': format_event(obj),
-        'tags': [tag.name for tag in Tag.objects.filter(taggit_taggeditem_items__object_id=1)]
+        'tags': [tag.name for tag in tags]
     }
 
     return TemplateResponse(req, 'event-single.html', context)
@@ -49,13 +50,10 @@ def get_event(req, event_id, occurrence_id):
 def get_all_events(req):
     tag = req.GET.get('tag')
     events_list = Event.objects.filter(recurrences__occurrence__datetime__gt=datetime.now())
+
     if tag:
-        try:
-            Tag.objects.get(name=tag)
-            events_list = events_list.filter(tags__name__in=[tag])
-        except Tag.DoesNotExist:
-            pass
-            
+        events_list = events_list.filter(tags__name__in=[tag])
+
     events_list = events_list.order_by('recurrences__occurrence__datetime') \
                              .values(*default_fields)
     paginator = Paginator(events_list, 5)
