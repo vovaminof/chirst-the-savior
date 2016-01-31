@@ -29,14 +29,15 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'savior.lib.context_processor.menu_processor.menu_processor',
     'savior.lib.context_processor.footer_processor.footer_processor',
+    'django.core.context_processors.request'
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -92,7 +93,7 @@ LANGUAGE_CODE = 'pl'
 
 LANGUAGES = (
     ('pl', 'Polish'),
-    # ('en', 'English'),
+    ('en', 'English'),
 )
 
 LOCALE_PATHS = (
