@@ -76,11 +76,11 @@
         <li class="{% if current == 'contact' %}active{% endif %}"><a href="/{{ LC }}/contact/">{% trans "CONTACT" %}</a></li>
         {% if LANGUAGES.0.0 == LC %}
           {% with LANGUAGES.1 as lang %}
-            <li><a href="/{{ lang.0 }}{{ request.path|slice:'3:' }}">{% trans lang.1 %}</a></li>
+            <li><a href="/{{ lang.0 }}{{ request.path|slice:'3:' }}">{{ lang.0|language_name_local }}</a></li>
           {% endwith %}
         {% else %}
           {% with LANGUAGES.0 as lang %}
-            <li><a href="/{{ lang.0 }}{{ request.path|slice:'3:' }}">{% trans lang.1 %}</a></li>
+            <li><a href="/{{ lang.0 }}{{ request.path|slice:'3:' }}">{{ lang.0|language_name_local }}</a></li>
           {% endwith %}
         {% endif %}
       </ul>
