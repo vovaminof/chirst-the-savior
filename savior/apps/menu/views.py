@@ -1,5 +1,6 @@
 from geopy.geocoders import GoogleV3
 
+from django.db.models import Q
 from django.conf import settings
 from django.template.response import TemplateResponse
 from django.forms.models import model_to_dict
@@ -51,7 +52,7 @@ def get_contact(req):
 
 
 def get_about(req, slug):
-    obj = get_object_or_404(About, slug=slug + '/')
+    obj = get_object_or_404(About, Q(slug_pl=slug + '/') | Q(slug_en=slug + '/'))
     context = {
         'item': model_to_dict(obj),
         'current': 'about'
@@ -60,7 +61,7 @@ def get_about(req, slug):
     return TemplateResponse(req, 'about.html', context)
 
 def get_ministry(req, slug):
-    obj = get_object_or_404(Ministry, slug=slug + '/')
+    obj = get_object_or_404(Ministry, Q(slug_pl=slug + '/') | Q(slug_en=slug + '/'))
     data =  model_to_dict(obj)
     data['image'] = settings.MEDIA_URL + str(data['image'])
     context = {
@@ -71,7 +72,7 @@ def get_ministry(req, slug):
     return TemplateResponse(req, 'ministry.html', context)
 
 def get_project(req, slug):
-    obj = get_object_or_404(Project, slug=slug + '/')
+    obj = get_object_or_404(Project, Q(slug_pl=slug + '/') | Q(slug_en=slug + '/'))
     data =  model_to_dict(obj)
     data['image'] = settings.MEDIA_URL + str(data['image'])
     context = {
@@ -82,7 +83,7 @@ def get_project(req, slug):
     return TemplateResponse(req, 'project.html', context)
 
 def get_course(req, slug):
-    obj = get_object_or_404(Course, slug=slug + '/')
+    obj = get_object_or_404(Course, Q(slug_pl=slug + '/') | Q(slug_en=slug + '/'))
     data =  model_to_dict(obj)
     data['image'] = settings.MEDIA_URL + str(data['image'])
     context = {

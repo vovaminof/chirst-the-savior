@@ -128,6 +128,11 @@ $('#prayerForm').ketchup().submit(function() {
 	return false;
 });
 	
+
+$('#language_switch').click(function() {
+  alert('click');
+});
+
 	
 
 }); /*End Document Ready*/

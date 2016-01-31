@@ -41,10 +41,8 @@
   });
 
 
-  /* ============== IMAGE GALLERY ================= */
-
   $(document).ready(function() {
-   $('.fancybox').fancybox();			
+   $('.fancybox').fancybox();	
  });			
 
 
@@ -92,9 +90,6 @@
  // });
 
  // });
-
-
-
 
 
 })();
