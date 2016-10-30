@@ -9,6 +9,8 @@ from django.shortcuts import get_object_or_404
 from savior.apps.menu.models import About, Ministry, Project, Course, Contact
 from savior.apps.savior.models import Carousel
 from savior.apps.service.models import Bulletin
+from savior.apps.blog.models import Post
+from savior.apps.blog.views import format_post
 
 geolocator = GoogleV3()
 
@@ -16,8 +18,12 @@ geolocator = GoogleV3()
 def get_index(req):
     context = {
         'carousel_images': [],
-        'bulletin': None
+        'bulletin': None,
+        'latest_posts': []
     }
+
+    for post in Post.objects.filter(published=True).order_by('-ctime')[:settings.INDEX_POSTS_LIMIT]:
+        context['latest_posts'].append(format_post(post))
 
     for obj in Carousel.objects.get_active():
         data = model_to_dict(obj)

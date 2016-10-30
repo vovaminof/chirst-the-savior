@@ -10,13 +10,7 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-md-9 has-margin-bottom"> 
-      {% if current_tag %}
-        <div class="has-margin-bottom">
-          <h5>{% trans "Results for: " %}{{ current_tag }}</h5>
-          <a href="/{{ LC }}/events/">{% trans "Show all events" %}</a>
-        </div>
-      {% endif %}
+    <div class="col-md-9 has-margin-bottom">
       {% for event in events %}
         <div class="row">
           <div class="col-md-4 col-sm-4">
@@ -45,21 +39,21 @@
       <div class="text-center center-block">
         <ul class="pagination">
           {% if handler.has_previous %}
-            <li><a href="/{{ LC }}/events/?page={{ handler.previous_page_number }}&tag={{ current_tag }}">«</a></li>
+            <li><a href="/{{ LC }}/events/?page={{ handler.previous_page_number }}">«</a></li>
           {% else %}
             <li class="disabled"><a href="#">«</a></li>
           {% endif %}
 
           {% for page in pages %}
             {% if page == handler.number %}
-              <li class="active"><a href="/{{ LC }}/events/?page={{ page }}&tag={{ current_tag }}">{{ page }}</a></li>
+              <li class="active"><a href="/{{ LC }}/events/?page={{ page }}">{{ page }}</a></li>
             {% else %}
-             <li><a href="/{{ LC }}/events/?page={{ page }}&tag={{ current_tag }}">{{ page }}</a></li>
+             <li><a href="/{{ LC }}/events/?page={{ page }}">{{ page }}</a></li>
             {% endif %}
           {% endfor %}
 
           {% if handler.has_next %}
-            <li><a href="/{{ LC }}/events/?page={{ handler.next_page_number }}&tag={{ current_tag }}">»</a></li>
+            <li><a href="/{{ LC }}/events/?page={{ handler.next_page_number }}">»</a></li>
           {% else %}
             <li class="disabled"><a href="#">»</a></li>
           {% endif %}
@@ -69,12 +63,6 @@
     <!--// col md 9--> 
     
     <!--Sidebar-->
-    <div class="col-md-3">
-      <div class="tag-cloud has-margin-bottom">
-        {% for tag in tags%}
-          <a href="/{{ LC }}/events/?tag={{ tag }}">{{ tag }}</a>
-        {% endfor %} </div>
-    </div>
   </div>
 </div>
 {% endblock %}

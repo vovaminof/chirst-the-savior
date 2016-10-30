@@ -16,13 +16,15 @@ INSTALLED_APPS = (
     'ckeditor',
     'geoposition',
     'events',
-    'south',
+    # 'south',
     'taggit',
 
     'savior.apps.savior',
     'savior.apps.service',
     'savior.apps.menu',
     'savior.apps.event',
+    'savior.apps.blog',
+    'savior.apps.resource'
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -103,3 +105,5 @@ LOCALE_PATHS = (
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 
 MAPS_API = 'AIzaSyC16yYOBShhwmlvzMXTo4Ps-29WCkq8EUE'
+
+INDEX_POSTS_LIMIT = 2

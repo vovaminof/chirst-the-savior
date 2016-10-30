@@ -6,18 +6,49 @@
 {% include 'slider.html' %}
 {% include 'bulletin.html' %}
 <div class="container">
+	{% if latest_posts %}
+	<div class="container has-margin-bottom">
+	  <div class="row">
+		<div class="col-md-10 has-margin-bottom">
+		  <div class="section-title left-align-desktop">
+			<h4> {% trans 'LATEST POSTS' %} </h4>
+		  </div>
+
+		  <!--Blog list-->
+          {% for post in latest_posts %}
+            <div class="row has-margin-bottom">
+              <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="{{ post.image }}" alt="bulletin blog"> </div>
+              <div class="col-md-8 col-sm-8 bulletin">
+                <h4 class="media-heading">{{post.post.title}} </h4>
+                <p>{% trans 'on ' %}{{ post.post.ctime | date:"d F Y"}} {% trans 'by' %} {{ post.author }}</p>
+                <p>{% autoescape off %}{{ post.safe_text | truncatechars:250}}{% endautoescape %}</p>
+                <a class="btn btn-primary" href="/{{ LC }}/blog/{{ post.post.id }}/" role="button">{% trans "Read Article" %} →</a> </div>
+            </div>
+          {% endfor %}
+		</div>
+		<!--// col md 9-->
+	  </div>
+	</div>
+	{% endif %}
 	<div class="container">
 	  <div class="row feature-block">
-	    <div class="col-md-12 col-sm-12 has-margin-bottom index-external-link"> 
+	    <div class="col-md-6 col-sm-6 has-margin-bottom index-external-link">
 	      <a href="http://www.facebook.com/voxboxkrakow" target="_blank">
 	      	<div class="image-wrapper">
 	      		<img class="img-responsive" src="/static/images/voxbox.png" alt="VoxBox logo" width="160" height="160" />
 	      	</div>
 	      </a>
 	      <h5>{% trans "VoxBox Education Center" %}<br></h5>
-	      <p style="width: 50%;margin: 0 auto">{% blocktrans %}The aim of VoxBox Kraków is to provide an English-based experience to people who want to learn. VoxBox teaches by themes, with a new theme every week.{% endblocktrans %}</p>
+	      <p style="width: 100%;margin: 0 auto">{% blocktrans %}The aim of VoxBox Kraków is to provide an English-based experience to people who want to learn. VoxBox teaches by themes, with a new theme every week.{% endblocktrans %}</p>
 	    </div>
-	   
+	    <div class="col-md-6 col-sm-6 has-margin-bottom index-external-link">
+			<a href="/{{ LC }}/resources/">
+				<div class="image-wrapper">
+					<img class="img-responsive" src="/static/images/resources.png" alt="resources" width="160" height="160" />
+				</div>
+			</a>
+			<h5>{% trans "Resources" %}<br></h5>
+		</div>
 	  </div>
 	</div>
 </div>

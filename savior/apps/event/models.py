@@ -7,8 +7,6 @@ from django.contrib.contenttypes import generic
 
 
 class Event(models.Model):
-    tags = TaggableManager()
-
     title = models.CharField(max_length=64)
     title_color = models.CharField(max_length=6, blank=True)
     description = RichTextField()

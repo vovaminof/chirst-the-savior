@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+
+<div class="subpage-head has-margin-bottom">
+  <div class="container">
+    <h3>{{ post.post.title }} </h3>
+    <p class="lead">{% trans 'on ' %}{{ post.post.ctime | date:"d F Y"}} {% trans 'by '%} {{ post.author }}</p>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 has-margin-bottom">
+      <article class="blog-content">
+        {% autoescape off %}{{ post.post.text }}{% endautoescape %}
+      </article>
+    </div>
+    <!--// col md 9-->
+
+    <!--Blog Sidebar-->
+    <div class="col-md-3">
+        <div class="about-author">
+            <img class="img-responsive center-block circle" src="{{ post.author_image }}" alt="author image">
+            <div class="about">{{ post.author.about }}</div>
+        </div>
+        <div class="tag-cloud has-margin-bottom has-margin-top">
+        {% for tag in tags %}
+          <a href="/blog/?tag={{ tag }}">{{ tag }}</a>
+        {% endfor %}
+        </div>
+     </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,7 +1,6 @@
 from ckeditor.fields import RichTextField
 from geoposition.fields import GeopositionField
 
-from django.conf import settings
 from django.db import models
 
 

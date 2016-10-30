@@ -71,7 +71,9 @@
             {% endif %}
           </li>
         {% endif %}
-     
+        {% if menu.blog %}
+          <li class="{% if current == 'blog'%}active{% endif %}"><a href="/{{ LC }}/blog/">{% trans "BLOG" %}</a></li>
+        {% endif %}
         <li class="{% if current == 'events' %}active{% endif %}"><a href="/{{ LC }}/events/">{% trans "EVENTS" %}</a></li>
         <li class="{% if current == 'contact' %}active{% endif %}"><a href="/{{ LC }}/contact/">{% trans "CONTACT" %}</a></li>
         {% if LANGUAGES.0.0 == LC %}

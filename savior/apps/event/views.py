@@ -1,8 +1,5 @@
-import re
-import time
 from datetime import datetime, timedelta
 
-from taggit.models import Tag
 
 from django.conf import settings
 from django.http import Http404
@@ -16,8 +13,6 @@ default_fields = ['id', 'title', 'title_color', 'description', 'recurrences', 'p
                   'recurrences__occurrence__id']
 
 def format_event(data):
-    result = []
-
     if 'image' in data:
         data['image'] = settings.MEDIA_URL + str(data['image'])
     
@@ -32,28 +27,20 @@ def format_event(data):
     return data
 
 def get_event(req, event_id, occurrence_id):
-    events = Event.objects.select_related('recurrences', 'recurrences__occurrence')
     try:
         obj = Event.objects.filter(pk=event_id, recurrences__occurrence__id=occurrence_id) \
                            .values(*(default_fields + ['image']))[0]
-        tags = Event.objects.get(id=obj['id']).tags.all()
     except IndexError:
         raise Http404
 
     context = {
-        'event': format_event(obj),
-        'tags': [tag.name for tag in tags]
+        'event': format_event(obj)
     }
 
     return TemplateResponse(req, 'event-single.html', context)
 
 def get_all_events(req):
-    tag = req.GET.get('tag', '')
     events_list = Event.objects.filter(recurrences__occurrence__datetime__gt=datetime.now())
-
-    if tag:
-        events_list = events_list.filter(tags__name__in=[tag])
-
     events_list = events_list.order_by('recurrences__occurrence__datetime') \
                              .values(*default_fields)
     paginator = Paginator(events_list, 5)
@@ -74,8 +61,6 @@ def get_all_events(req):
         'events': [format_event(event) for event in events],
         'handler': events,
         'pages': pages,
-        'current_tag': tag,
-        'tags': [tag.name for tag in Tag.objects.all()],
         'current': 'events'
     }
 

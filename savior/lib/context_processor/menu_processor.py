@@ -1,4 +1,5 @@
 from savior.apps.menu.models import About, Ministry, Project, Course
+from savior.apps.blog.models import Post
 
 def menu_processor(response):
     data = {
@@ -19,5 +20,7 @@ def menu_processor(response):
 
     for obj in Course.objects.get_active().values('slug', 'title'):
         data['courses'].append(obj)
+
+    data['blog'] = Post.objects.count() != 0
 
     return {'menu': data}

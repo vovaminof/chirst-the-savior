@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="subpage-head has-margin-bottom">
+  <div class="container">
+    <h3>{% trans "Resources" %}</h3>
+    <p class="lead">{% trans "Materials to download" %}</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 has-margin-bottom">
+        {% if resources %}
+            {% for resource in resources %}
+               {% if resource.category %}
+                    <h4>{{ resource.category }}</h4>
+               {% endif %}
+                <ul>
+                    {% for item in resource.items %}
+                        <li><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        {% else %}
+           <h4>{% trans "No resources yet..." %}</h4>
+        {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

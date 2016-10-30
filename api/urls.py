@@ -8,11 +8,13 @@ from django.conf.urls.i18n import i18n_patterns
 admin.autodiscover()
 
 base_urls = patterns('',
-	url(r'^i18n/', include('django.conf.urls.i18n')),
-	url(r'^ckeditor/', include('ckeditor.urls')),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^ckeditor/', include('ckeditor.urls')),
     url(r'^service/', include('savior.apps.service.urls')),
     url(r'^savior/', include('savior.apps.savior.urls')),
     url(r'^events/', include('savior.apps.event.urls')),
+    url(r'^blog/', include('savior.apps.blog.urls')),
+    url(r'^resources/', include('savior.apps.resource.urls')),
     url(r'^', include('savior.apps.menu.urls')),
 )
 

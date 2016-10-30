@@ -9,10 +9,9 @@ SECRET_KEY = 'test'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':     'savior',
-        'USER':     'root',
-        'PASSWORD': '',
-        'HOST':     '',
+        'NAME': 'savior',
+        'USER': 'root',
+        'PASSWORD': 'root',
         'PORT': ''
     }
 }
@@ -21,9 +20,9 @@ SOUTH_DATABASE_ADAPTERS = {
     'default': 'south.db.mysql'
 }
 
-STATIC_ROOT = 'D:\Development\church-static'
+STATIC_ROOT = 'C:\Development\kosciolzbawiciela.pl\church-static'
 STATIC_URL = '/static/'
-MEDIA_ROOT = 'D:\Development\church-media'
+MEDIA_ROOT = 'C:\Development\kosciolzbawiciela.pl\church-media'
 MEDIA_URL = '/media/'
 
 CKEDITOR_UPLOAD_PATH = 'ckeditor/'
