@@ -52,7 +52,7 @@ msgstr "Pokaż wszystkie artykuły"
 
 #: savior/templates/blog.html:31 savior/templates/index.html:23
 msgid "by"
-msgstr ""
+msgstr "|"
 
 #: savior/templates/blog.html:33 savior/templates/index.html:25
 msgid "Read Article"
