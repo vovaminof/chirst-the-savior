@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-22 13:25+0300\n"
+"POT-Creation-Date: 2017-08-22 13:43+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,6 +58,14 @@ msgstr ""
 #: savior/templates/blog.html:33 savior/templates/index.html:25
 msgid "Read Article"
 msgstr "Czytaj"
+
+#: savior/templates/blog.html:69
+msgid "Authors"
+msgstr "Autorzy"
+
+#: savior/templates/blog.html:74
+msgid "Tags"
+msgstr "Kategorie tematyczne"
 
 #: savior/templates/bulletin.html:9
 msgid "The latest service bulletin"
