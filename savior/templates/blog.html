@@ -66,12 +66,12 @@
 
     <!--Sidebar-->
     <div class="col-md-3">
-      <span class="tag-section-title">Authors</span>
+      <span class="tag-section-title">{% trans 'Authors' %}</span>
       <div class="tag-cloud has-margin-bottom blog-tag">
         {% for author in authors %}
           <a href="/{{ LC }}/blog/?author={{ author.pk }}">{{ author.first_name }} {{ author.last_name }}</a>
         {% endfor %} </div>
-      <span class="tag-section-title">Tags</span>
+      <span class="tag-section-title">{% trans 'Tags' %}</span>
       <div class="tag-cloud has-margin-bottom blog-tag">
         {% for tag in tags %}
           <a href="/{{ LC }}/blog/?tag={{ tag }}">{{ tag }}</a>
