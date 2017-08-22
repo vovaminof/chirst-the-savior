@@ -2,9 +2,20 @@ import re
 
 from django.template.response import TemplateResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from savior.apps.blog.models import Post
+from savior.apps.blog.models import Post, Author
 from savior.lib.utils.views import get_image_url
 from taggit.models import Tag
+
+REPLACE = (
+    "&rdquo;", "&nbsp;", "&bdquo;"
+)
+
+
+def clean_text(text):
+    for repl in REPLACE:
+        text = text.replace(repl, " ")
+
+    return text
 
 
 def format_post(post):
@@ -16,15 +27,19 @@ def format_post(post):
         'image': image,
         'author': post.author,
         'author_image': author_image,
-        'safe_text': re.sub('<.*?>', '', post.text)
+        'safe_text': clean_text(re.sub('<.*?>', '', post.text))
     }
 
 
 def get_all_posts(req):
     tag = req.GET.get('tag', '')
+    author = req.GET.get('author', '')
     posts_list = Post.objects.filter(published=True).order_by('-ctime')
     if tag:
         posts_list = posts_list.filter(tags__name__in=[tag])
+
+    if author:
+        posts_list = posts_list.filter(author=int(author))
 
     paginator = Paginator(posts_list, 5)
     page = req.GET.get('page')
@@ -44,7 +59,10 @@ def get_all_posts(req):
         'handler': posts,
         'pages': pages,
         'current_tag': tag,
-        'tags': [tag.name for tag in Tag.objects.all()],
+        'author_pk': author,
+        'current_author': Author.objects.get(pk=author) if author else None,
+        'tags': [tag.name for tag in Tag.objects.all().order_by("name")],
+        'authors': Author.objects.all().order_by("first_name"),
         'current': 'blog'
     }
 

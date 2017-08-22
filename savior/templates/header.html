@@ -24,11 +24,11 @@
               </ul>
             {% else %}
               <a href="/{{ LC }}{% trans '/about/' %}{{ menu.about.0.slug }}">{% trans "ABOUT" %}</a>
-            {% endif %}           
+            {% endif %}
           {% endif %}
         </li>
         {% if menu.ministries %}
-          <li class="{% if current == 'ministries' %}active{% endif %}"> 
+          <li class="{% if current == 'ministries' %}active{% endif %}">
             {% if menu.ministries|length > 1 %}
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 {% trans "MINISTRY" %}<span class="caret"></span>
@@ -71,6 +71,9 @@
             {% endif %}
           </li>
         {% endif %}
+        <li class="{% if current == 'resources' %}active{% endif %}">
+          <a href="/{{ LC }}/resources">{% trans "RESOURCES" %}</a>
+        </li>
         {% if menu.blog %}
           <li class="{% if current == 'blog'%}active{% endif %}"><a href="/{{ LC }}/blog/">{% trans "BLOG" %}</a></li>
         {% endif %}
@@ -87,8 +90,8 @@
         {% endif %}
       </ul>
     </div>
-    <!--/.nav-collapse --> 
-    
+    <!--/.nav-collapse -->
+
   </div>
 </div>
-<!--// Navbar Ends--> 
+<!--// Navbar Ends-->

@@ -4,7 +4,8 @@ from savior.apps.resource.models import Resource, Category
 
 def get_all_resources(req):
     context = {
-        'resources': []
+        'resources': [],
+        'current': 'resources'
     }
     for category in Category.objects.all().order_by('order'):
         resources = Resource.objects.filter(category=category, active=True)

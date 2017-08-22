@@ -8,142 +8,183 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-27 23:26+0200\n"
+"POT-Creation-Date: 2017-08-22 13:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: .\savior\templates\bulletin.html:9
-msgid "The latest service bulletin"
-msgstr "Najnowszy biuletyn"
-
-#: .\savior\templates\bulletin.html:11
-msgid "Download"
-msgstr "Pobierz"
-
-#: .\savior\templates\contact.html:7 .\savior\templates\footer.html:17
-msgid "Contact us"
-msgstr "Kontakt"
-
-#: .\savior\templates\contact.html:8
-msgid "Our Church address and contact details"
-msgstr "Adres i kontakt"
-
-#: .\savior\templates\contact.html:15 .\savior\templates\footer.html:21
-msgid "OUR ADDRESS"
-msgstr "ADRES"
-
-#: .\savior\templates\contact.html:18 .\savior\templates\footer.html:24
-msgid "Phone"
-msgstr "Tel."
-
-#: .\savior\templates\contact.html:19
-msgid "Email"
-msgstr "Email"
-
-#: .\savior\templates\event-single.html:9
+#: savior/templates/blog-single.html:9 savior/templates/blog.html:31
+#: savior/templates/event-single.html:9 savior/templates/index.html:23
 msgid "on "
 msgstr " "
 
-#: .\savior\templates\event-single.html:9
+#: savior/templates/blog-single.html:9
+msgid "by "
+msgstr "autor: "
+
+#: savior/templates/blog.html:7
+msgid "Our Blog"
+msgstr "Witajcie na naszym blogu!"
+
+#: savior/templates/blog.html:8
+msgid "Articles and latest bulletins related to our church"
+msgstr ""
+"Coś dla sfrustrowanych katolików, bezkrytycznych ewangelicznych chrześcijan "
+"i bezwyznaniowych sceptyków"
+
+#: savior/templates/blog.html:17
+msgid "Tag: "
+msgstr "Temat: "
+
+#: savior/templates/blog.html:20
+msgid "Author: "
+msgstr "Autor: "
+
+#: savior/templates/blog.html:22
+#, fuzzy
+msgid "Show all posts"
+msgstr "Pokaż wszystkie wydarzenia"
+
+#: savior/templates/blog.html:31 savior/templates/index.html:23
+msgid "by"
+msgstr ""
+
+#: savior/templates/blog.html:33 savior/templates/index.html:25
+msgid "Read Article"
+msgstr "Czytaj"
+
+#: savior/templates/bulletin.html:9
+msgid "The latest service bulletin"
+msgstr "Najnowszy biuletyn"
+
+#: savior/templates/bulletin.html:11
+msgid "Download"
+msgstr "Pobierz"
+
+#: savior/templates/contact.html:7 savior/templates/footer.html:17
+msgid "Contact us"
+msgstr "Kontakt"
+
+#: savior/templates/contact.html:8
+msgid "Our Church address and contact details"
+msgstr "Adres i kontakt"
+
+#: savior/templates/contact.html:15 savior/templates/footer.html:21
+msgid "OUR ADDRESS"
+msgstr "ADRES"
+
+#: savior/templates/contact.html:18 savior/templates/footer.html:24
+msgid "Phone"
+msgstr "Tel."
+
+#: savior/templates/contact.html:19
+msgid "Email"
+msgstr "Email"
+
+#: savior/templates/event-single.html:9
 msgid "at "
 msgstr "- "
 
-#: .\savior\templates\event-single.html:23 .\savior\templates\events.html:24
+#: savior/templates/event-single.html:23 savior/templates/events.html:18
 msgid "EVENT DETAILS"
 msgstr "Szczegóły wydarzenia"
 
-#: .\savior\templates\events.html:7
+#: savior/templates/events.html:7
 msgid "Programs &amp; Events"
 msgstr "Wydarzenia kościelne"
 
-#: .\savior\templates\events.html:8
+#: savior/templates/events.html:8
 msgid "List of Upcoming Events and Programs"
 msgstr "Lista nadchodzących wydarzeń"
 
-#: .\savior\templates\events.html:16
-msgid "Results for: "
-msgstr "Wyniki dla: "
-
-#: .\savior\templates\events.html:17
-msgid "Show all events"
-msgstr "Pokaż wszystkie wydarzenia"
-
-#: .\savior\templates\events.html:36
+#: savior/templates/events.html:31
 msgid "Event Details"
 msgstr "Szczegóły"
 
-#: .\savior\templates\footer.html:9
+#: savior/templates/footer.html:9
 msgid "ABOUT THE CHURCH"
 msgstr "O KOŚCIELE"
 
-#: .\savior\templates\footer.html:13
+#: savior/templates/footer.html:13
 msgid "QUICK LINKS"
 msgstr "NA SKRÓTY"
 
-#: .\savior\templates\footer.html:15
+#: savior/templates/footer.html:15
 msgid "Events"
 msgstr "Wydarzenia"
 
-#: .\savior\templates\footer.html:16
+#: savior/templates/footer.html:16
 msgid "Latest bulletin"
 msgstr "Ostatni biuletyn"
 
-#: .\savior\templates\footer.html:28
+#: savior/templates/footer.html:28
 #, fuzzy
 msgid "CONNECT"
 msgstr "KONTAKT"
 
-#: .\savior\templates\header.html:17 .\savior\templates\header.html.py:25
+#: savior/templates/header.html:18 savior/templates/header.html.py:26
 msgid "ABOUT"
 msgstr "O KOŚCIELE"
 
-#: .\savior\templates\header.html:21 .\savior\templates\header.html.py:25
+#: savior/templates/header.html:22 savior/templates/header.html.py:26
 msgid "/about/"
 msgstr "/o-nas/"
 
-#: .\savior\templates\header.html:33 .\savior\templates\header.html.py:41
+#: savior/templates/header.html:34 savior/templates/header.html.py:42
 msgid "MINISTRY"
 msgstr "DUSZPASTERSTWA"
 
-#: .\savior\templates\header.html:37 .\savior\templates\header.html.py:41
+#: savior/templates/header.html:38 savior/templates/header.html.py:42
 msgid "/ministry/"
 msgstr "/duszpasterstwo/"
 
-#: .\savior\templates\header.html:48
+#: savior/templates/header.html:49
 msgid "PROJECT"
 msgstr "PROJEKTY"
 
-#: .\savior\templates\header.html:52
+#: savior/templates/header.html:53
 msgid "/project/"
 msgstr "/projekt/"
 
-#: .\savior\templates\header.html:61 .\savior\templates\header.html.py:69
+#: savior/templates/header.html:62 savior/templates/header.html.py:70
 msgid "COURSE"
 msgstr "KURSY"
 
-#: .\savior\templates\header.html:65 .\savior\templates\header.html.py:69
+#: savior/templates/header.html:66 savior/templates/header.html.py:70
 msgid "/course/"
 msgstr "/kurs/"
 
-#: .\savior\templates\header.html:74
+#: savior/templates/header.html:75
+msgid "RESOURCES"
+msgstr "BIBLIOTEKA"
+
+#: savior/templates/header.html:78
+msgid "BLOG"
+msgstr ""
+
+#: savior/templates/header.html:80
 msgid "EVENTS"
 msgstr "WYDARZENIA"
 
-#: .\savior\templates\header.html:75
+#: savior/templates/header.html:81
 msgid "CONTACT"
 msgstr "KONTAKT"
 
-#: .\savior\templates\index.html:17
+#: savior/templates/index.html:14
+msgid "LATEST POSTS"
+msgstr "OSTATNIE WPISY"
+
+#: savior/templates/index.html:41
 msgid "VoxBox Education Center"
 msgstr "Centrum Edukacyjne VoxBox"
 
-#: .\savior\templates\index.html:18
+#: savior/templates/index.html:42
 msgid ""
 "The aim of VoxBox Kraków is to provide an English-based experience to people "
 "who want to learn. VoxBox teaches by themes, with a new theme every week."
@@ -152,26 +193,41 @@ msgstr ""
 "angielskim dla tych, którzy chcą się uczyć.Spotykamy się każdego tygodnia i "
 "omawiamy konkretny temat."
 
-#: .\savior\templates\pray.html:10
+#: savior/templates/index.html:50 savior/templates/resources.html:7
+msgid "Resources"
+msgstr "Do pobrania"
+
+#: savior/templates/pray.html:10
 msgid "PRAYER REQUEST"
 msgstr "PROŚBA MODLITEWNA"
 
-#: .\savior\templates\pray.html:13
+#: savior/templates/pray.html:13
 msgid "Name"
 msgstr "Imię"
 
-#: .\savior\templates\pray.html:14
+#: savior/templates/pray.html:14
 msgid "Enter your name"
 msgstr "Wpisz swoje imię"
 
-#: .\savior\templates\pray.html:15
+#: savior/templates/pray.html:15
 msgid "Enter your request"
 msgstr "Wpisz swoją prośbę"
 
-#: .\savior\templates\pray.html:16
+#: savior/templates/pray.html:16
 msgid "Your prayer has been saved."
 msgstr "Twoja prośba została zapisana."
 
-#: .\savior\templates\pray.html:20
+#: savior/templates/pray.html:20
 msgid "Send"
 msgstr "Wyślij"
+
+#: savior/templates/resources.html:8
+msgid "Materials to download"
+msgstr "Do pobrania"
+
+#: savior/templates/resources.html:26
+msgid "No resources yet..."
+msgstr "Brak materiałów"
+
+#~ msgid "Results for: "
+#~ msgstr "Wyniki dla: "

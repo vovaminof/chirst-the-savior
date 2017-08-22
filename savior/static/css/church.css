@@ -33,7 +33,7 @@ Author URI: http://themeforest.net/user/surjithctly
 16. SHORTCODES
 17. CONTACT US
 
-If you having trouble in editing css, see documentation or please email me on support@surjithctly.in 
+If you having trouble in editing css, see documentation or please email me on support@surjithctly.in
 
 */
 
@@ -479,7 +479,7 @@ top: 25%;
 }
 
 .event-details .ed-content {
-	line-height:2;	
+	line-height:2;
 	color: #53504c;
 }
 
@@ -534,7 +534,7 @@ top: 25%;
 
 
 
-/* 
+/*
  *  Core Owl Carousel CSS File
  */
 .owl-carousel {
@@ -627,7 +627,7 @@ top: 25%;
 	display: block;
 }
 /*To move navigation buttons outside use these settings:*/
- 
+
  .owl-theme .owl-controls {
 	margin-top: 10px;
 	text-align: center;
@@ -815,7 +815,7 @@ footer h5 {
 	padding:5px;
 }
 footer p {
-	color: #CCC0C0;	
+	color: #CCC0C0;
 }
 footer a {
 	color:#CCC0C0;
@@ -952,12 +952,12 @@ background-color: #D3CFCC;
 
 .charity-image {
 	width:100%;
-	float:left;	
+	float:left;
 	margin-bottom:30px;
 }
 
 .charity-image img {
-	min-width:100%;	
+	min-width:100%;
 }
 
 .charity-desc {
@@ -967,7 +967,7 @@ background-color: #D3CFCC;
 .charity-desc h3 {
 	font-size:28px;
 	color:#53504c;
-	margin:0 0 5px 0;	
+	margin:0 0 5px 0;
 }
 
 .pledged-amount {
@@ -982,7 +982,7 @@ background-color: #D3CFCC;
 
 .donate-now {
 	text-align:center;
-	padding:10px 0;	
+	padding:10px 0;
 	width:100%;
 	float:left;
 }
@@ -1001,7 +1001,7 @@ background-color: #D3CFCC;
 .donate-now {
 	text-align:right;
 	padding:0;
-	float:right;	
+	float:right;
 	width:auto;
 }
 
@@ -1010,7 +1010,7 @@ background-color: #D3CFCC;
 /*========== 19. EVENT CALENDAR ==============*/
 
 .event-cal-wrap h2 {
-	font-size:18px;	
+	font-size:18px;
 	color:#2c2c2a;
 }
 
@@ -1022,11 +1022,11 @@ background-color: #D3CFCC;
 /*========== FLEXSLIDER ==============*/
 
 .flexslider {
-	height:700px;	
+	height:700px;
 }
 
 .flexslider .slides li {
-	height:700px;	
+	height:700px;
 }
 
 .flexslider-caption {
@@ -1037,7 +1037,7 @@ background-color: #D3CFCC;
 }
 
 .flexslider-caption h1, .flexslider-caption h2, .flexslider-caption h3, .flexslider-caption p, .flexslider-caption .btn {
-	opacity:0;	
+	opacity:0;
 }
 
 .flexslider-caption .btn {
@@ -1177,7 +1177,7 @@ background-color: #D3CFCC;
 	vertical-align: middle;
 }
 
-.index-external-link a:hover, 
+.index-external-link a:hover,
 .index-external-link a:focus {
 	color: initial;
 	text-decoration: none;
@@ -1193,4 +1193,9 @@ background-color: #D3CFCC;
 .about {
     text-align: center;
     padding-top: 5px;
+}
+
+.blog-tag {
+    margin-top: 12px;
+    margin-left: 5px;
 }
