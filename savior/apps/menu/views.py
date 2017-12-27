@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from geopy.geocoders import GoogleV3
 
 from django.db.models import Q
@@ -46,8 +48,8 @@ def get_index(req):
 def get_contact(req):
     obj = get_object_or_404(Contact)
     data = model_to_dict(obj)
-    location = geolocator.reverse('{0},{1}'.format(data['address'].latitude, data['address'].longitude), timeout=5)
-    data['readable_address'] = location[0].address.replace('Poland', 'Polska')
+
+    data['readable_address'] = "Długa 3, Kraków, Polska"
 
     context = {
         'item': data,

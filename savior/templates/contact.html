@@ -18,6 +18,15 @@
         <div class="col-lg-6">{% trans 'Phone' %}: {{ item.phone }}<br>
           {% trans 'Email' %}: <a href="mailto:{{ item.email }}" target="_top">{{ item.email }}</a></div>
       </div>
+      <div class="row" style="padding-top: 20px">
+        <div class="col-lg-12">
+          
+          {% trans 'Offerings are payable to: Fundacja “Europejska Misja Chrześcijańska”' %}
+          <br/>
+          {% trans 'Bank account IBAN' %}: {{ item.bank }}
+
+        </div>
+      </div>
     </div>
   </div>
 </div>

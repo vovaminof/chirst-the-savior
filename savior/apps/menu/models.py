@@ -55,3 +55,4 @@ class Contact(models.Model):
     address = GeopositionField()
     phone = models.CharField(max_length=32)
     email = models.CharField(max_length=32) 
+    bank = models.CharField(max_length=128)
