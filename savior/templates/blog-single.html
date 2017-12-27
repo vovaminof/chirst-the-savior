@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
+{% block meta %}
+  <meta property="og:url"           content="{{ request.build_absolute_uri }}" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="{{ post.post.title }}" />
+  <meta property="og:image"         content="{{ post.post.image }}" />
+{% endblock %}
+
 {% block content %}
 
 <div class="subpage-head has-margin-bottom">
@@ -17,6 +24,10 @@
       <article class="blog-content">
         {% autoescape off %}{{ post.post.text }}{% endautoescape %}
       </article>
+      <div class="fb-share-button" 
+        data-layout="button"
+        data-size="large">
+      </div>
     </div>
     <!--// col md 9-->
 
