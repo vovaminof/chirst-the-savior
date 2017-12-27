@@ -4,8 +4,9 @@
 {% block meta %}
   <meta property="og:url"           content="{{ request.build_absolute_uri }}" />
   <meta property="og:type"          content="website" />
+  <meta property="og:description"   content="{% autoescape on %}{{ post.safe_text | truncatechars:140 }}{% endautoescape %}" />
   <meta property="og:title"         content="{{ post.post.title }}" />
-  <meta property="og:image"         content="{{ post.post.image }}" />
+  <meta property="og:image"         content="{{ post.post.image.url }}" />
 {% endblock %}
 
 {% block content %}
