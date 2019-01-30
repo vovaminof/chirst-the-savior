@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-22 13:43+0300\n"
+"POT-Creation-Date: 2017-12-27 17:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: savior/templates/blog-single.html:9 savior/templates/blog.html:31
+#: savior/templates/blog-single.html:17 savior/templates/blog.html:31
 #: savior/templates/event-single.html:9 savior/templates/index.html:23
 msgid "on "
 msgstr ""
 
-#: savior/templates/blog-single.html:9
+#: savior/templates/blog-single.html:17
 msgid "by "
 msgstr ""
 
@@ -33,6 +33,8 @@ msgstr ""
 #: savior/templates/blog.html:8
 msgid "Articles and latest bulletins related to our church"
 msgstr ""
+"Something for disillusioned Catholics, uncritical Evangelicals and "
+"unbelieving sceptics"
 
 #: savior/templates/blog.html:17
 msgid "Tag: "
@@ -88,6 +90,14 @@ msgstr ""
 
 #: savior/templates/contact.html:19
 msgid "Email"
+msgstr ""
+
+#: savior/templates/contact.html:24
+msgid "Offerings are payable to: Fundacja “Europejska Misja Chrześcijańska”"
+msgstr ""
+
+#: savior/templates/contact.html:26
+msgid "Bank account IBAN"
 msgstr ""
 
 #: savior/templates/event-single.html:9

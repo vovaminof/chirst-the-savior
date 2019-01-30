@@ -29,7 +29,7 @@
           <div class="col-md-8 col-sm-8 bulletin">
             <h4 class="media-heading">{{post.post.title}} </h4>
             <p>{% trans 'on ' %}{{ post.post.ctime | date:"d F Y"}} {% trans 'by' %} {{ post.author }}</p>
-            <p>{% autoescape on %}{{ post.safe_text | truncatechars:140 }}{% endautoescape %}</p>
+            <p>{% autoescape off %}{{ post.safe_text | truncatechars:140 }}{% endautoescape %}</p>
             <a class="btn btn-primary" href="/{{ LC }}/blog/{{ post.post.id }}/" role="button">{% trans "Read Article" %} →</a> </div>
         </div>
         {% if not forloop.last %}

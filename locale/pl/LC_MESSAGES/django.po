@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-22 13:43+0300\n"
+"POT-Creation-Date: 2017-12-27 17:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,12 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: savior/templates/blog-single.html:9 savior/templates/blog.html:31
+#: savior/templates/blog-single.html:17 savior/templates/blog.html:31
 #: savior/templates/event-single.html:9 savior/templates/index.html:23
 msgid "on "
 msgstr " "
 
-#: savior/templates/blog-single.html:9
+#: savior/templates/blog-single.html:17
 msgid "by "
 msgstr "autor: "
 
@@ -93,6 +93,14 @@ msgstr "Tel."
 #: savior/templates/contact.html:19
 msgid "Email"
 msgstr "Email"
+
+#: savior/templates/contact.html:24
+msgid "Offerings are payable to: Fundacja “Europejska Misja Chrześcijańska”"
+msgstr "Ofiary na rzecz Kościoła przyjmowane są przez Fundację “Europejska Misja Chrześcijańska”"
+
+#: savior/templates/contact.html:26
+msgid "Bank account IBAN"
+msgstr "Nr konta"
 
 #: savior/templates/event-single.html:9
 msgid "at "
