@@ -18,7 +18,15 @@
                {% endif %}
                 <ul>
                     {% for item in resource.items %}
-                        <li><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></li>
+                        {% if item.formats|length == 1 %}
+                            <li><a href="{{ item.formats.0.link}}" target="_blank">{{ item.title }}</a></li>
+                        {% else %}
+                        <li>{{ item.title }}
+                            {% for file_format in item.formats %}
+                                <a href="{{ file_format.link }}" target="_blank">{{ file_format.file_format }}</a>
+                            {% endfor %}
+                        </li>
+                        {% endif %}
                     {% endfor %}
                 </ul>
             {% endfor %}

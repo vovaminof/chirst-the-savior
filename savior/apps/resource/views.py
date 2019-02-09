@@ -1,5 +1,5 @@
 from django.template.response import TemplateResponse
-from savior.apps.resource.models import Resource, Category
+from savior.apps.resource.models import Resource, Category, File
 
 
 def get_all_resources(req):
@@ -8,12 +8,18 @@ def get_all_resources(req):
         'current': 'resources'
     }
     for category in Category.objects.all().order_by('order'):
-        resources = Resource.objects.filter(category=category, active=True)
+        resources = Resource.objects.filter(category=category, active=True).order_by('order')
         if not resources:
             continue
 
+        items = []
+        for resource in resources:
+            items.append({
+                "title": resource.title,
+                "formats": resource.file_set.all()
+            })
         context['resources'].append({
-            'items': resources,
+            'items': items,
             'category': category
         })
 
