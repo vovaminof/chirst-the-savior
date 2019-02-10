@@ -1,5 +1,7 @@
 from django.db import models
 
+from ckeditor.fields import RichTextField
+
 
 class Category(models.Model):
     title = models.CharField(max_length=64)
@@ -13,7 +15,7 @@ class Category(models.Model):
 
 
 class Resource(models.Model):
-    category = models.ForeignKey(Category, null=True, blank=True)
+    category = models.ForeignKey(Category, null=False, blank=False)
     title = models.CharField(max_length=64)
     active = models.BooleanField(default=True)
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
@@ -37,3 +39,19 @@ class File(models.Model):
             result += " [%s]" % (self.file_format,)
 
         return result
+
+
+class Book(models.Model):
+    category = models.ForeignKey(Category, null=False, blank=False)
+    title = models.CharField(max_length=64)
+    short_text = models.CharField(max_length=256, null=True, blank=True)
+    description = RichTextField()
+    active = models.BooleanField(default=True)
+    order = models.PositiveIntegerField(default=0, blank=False, null=False)
+
+    def __unicode__(self):
+        return self.title
+
+    class Meta:
+        ordering = ('order',)
+

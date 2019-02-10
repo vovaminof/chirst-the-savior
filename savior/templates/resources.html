@@ -18,14 +18,18 @@
                {% endif %}
                 <ul>
                     {% for item in resource.items %}
-                        {% if item.formats|length == 1 %}
-                            <li><a href="{{ item.formats.0.link}}" target="_blank">{{ item.title }}</a></li>
-                        {% else %}
-                        <li>{{ item.title }}
-                            {% for file_format in item.formats %}
-                                <a href="{{ file_format.link }}" target="_blank">{{ file_format.file_format }}</a>
-                            {% endfor %}
-                        </li>
+                        {% if item.type == "resource" %}
+                            {% if item.formats|length == 1 %}
+                                <li><a href="{{ item.formats.0.link}}" target="_blank">{{ item.title }}</a></li>
+                            {% else %}
+                            <li>{{ item.title }}
+                                {% for file_format in item.formats %}
+                                    <a href="{{ file_format.link }}" target="_blank">{{ file_format.file_format }}</a>
+                                {% endfor %}
+                            </li>
+                            {% endif %}
+                        {% elif item.type == "book" %}
+                            <li><a href="/{{ LC }}/resources/book/{{ item.pk }}/" target="_blank">{{ item.title }}</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
