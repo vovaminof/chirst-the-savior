@@ -7,7 +7,7 @@ class MenuTranslationOptions(TranslationOptions):
 
 
 class ContactTranslation(TranslationOptions):
-	fields = ('address_prefix', 'bank')
+	fields = ('address', 'text')
 
 
 translator.register(Ministry, MenuTranslationOptions)

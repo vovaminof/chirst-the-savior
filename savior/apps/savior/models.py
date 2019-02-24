@@ -3,8 +3,6 @@ from django.utils.timezone import now
 from django.conf import settings
 from django.db import models
 
-from savior.apps.menu.models import Contact
-
 
 class CarouselManager(models.Manager):
 
@@ -39,7 +37,9 @@ class Carousel(models.Model):
 
 
 class Footer(models.Model):
-    contact = models.ForeignKey(Contact)
+    address = models.CharField(max_length=128)
+    phone = models.CharField(max_length=32)
+    email = models.CharField(max_length=32)
     about_text = models.TextField()
     facebook_link = models.CharField(max_length=64)
 

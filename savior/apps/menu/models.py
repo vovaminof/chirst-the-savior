@@ -51,8 +51,6 @@ class Course(AbstractMenu):
 
 
 class Contact(models.Model):
-    address_prefix = models.TextField()
-    address = GeopositionField()
-    phone = models.CharField(max_length=32)
-    email = models.CharField(max_length=32) 
-    bank = models.CharField(max_length=128)
+    address = models.CharField(max_length=128)
+    text = RichTextField()
+

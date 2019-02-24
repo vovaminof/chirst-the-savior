@@ -49,8 +49,6 @@ def get_contact(req):
     obj = get_object_or_404(Contact)
     data = model_to_dict(obj)
 
-    data['readable_address'] = "Długa 3, Kraków, Polska"
-
     context = {
         'item': data,
         'current': 'contact',

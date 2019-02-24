@@ -11,29 +11,15 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6 has-margin-bottom">
-      <h5>{% trans 'OUR ADDRESS' %}</h5>
-      <div class="row">
-        <div class="col-lg-6">{{ item.address_prefix }}{{ item.readable_address }}</div>
-        <div class="col-lg-6">{% trans 'Phone' %}: {{ item.phone }}<br>
-          {% trans 'Email' %}: <a href="mailto:{{ item.email }}" target="_top">{{ item.email }}</a></div>
+      <div class="col-md-6 has-margin-bottom">
+        {% autoescape off %}{{ item.text }}{% endautoescape %}
       </div>
-      <div class="row" style="padding-top: 20px">
-        <div class="col-lg-12">
-          
-          {% trans 'Offerings are payable to: Fundacja “Europejska Misja Chrześcijańska”' %}
-          <br/>
-          {% trans 'Bank account IBAN' %}: {{ item.bank }}
-
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 <div class="location-map">
  <iframe
   frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/search?key={{ maps_api }}&q={{ item.readable_address }}">
+  src="https://www.google.com/maps/embed/v1/search?key={{ maps_api }}&q={{ item.address }}">
 </iframe>
 </div>
 {% endblock %}
