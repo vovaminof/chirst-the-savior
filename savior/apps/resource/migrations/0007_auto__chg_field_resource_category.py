@@ -11,7 +11,7 @@ class Migration(SchemaMigration):
 
         # Changing field 'Resource.category'
         db.alter_column(u'resource_resource', 'category_id',
-                        self.gf('django.db.models.fields.related.ForeignKey')(default=0, to=orm['resource.Category']))
+                        self.gf('django.db.models.fields.related.ForeignKey')(default=1, to=orm['resource.Category']))
 
     def backwards(self, orm):
 
